@@ -1,10 +1,18 @@
  
 
 sudo                superuser
+    EDITOR=nano visudo
+        (Uncomment Wheel)
 nano                editor
+vim                 editor
 htop                system monitor
 networkmanager      network management
     NetworkManager.service
+grub efibootmgr     bootloader
+    grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=grub_uefi
+    grub-mkconfig -o /boot/grub/grub.cfg
+
+
 xorg-server         window manager
 nvidia              video card driver
 plasma              kde plasma
@@ -15,10 +23,12 @@ plasma              kde plasma
 firefox             web browser
 vlc                 media player
 steam               games
+gnupg               gpg key management
 
 
 qemu libvirt iptables-nft dnsmasq bridge-utils openbsd-netcat virt-manager
     libvirtd.service
+
 
 snapd                       snap pkgs
     snapd.socket

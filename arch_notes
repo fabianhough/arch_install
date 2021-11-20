@@ -1,0 +1,103 @@
+- Download Arch ISO
+- Check integrity with key
+    pacman-key -v archlinux-version-x86_64.iso.sig
+- Create install media
+    dd bs=4M if=path/to/archlinux-version-x86_64.iso of=/dev/sdx conv=fsync oflag=direct status=progress
+- Verify UEFI
+    ls /sys/firmware/efi/efivars
+- Confirm network
+    ip addr show
+    WIRELESS: iwctl
+    ping archlinux.org
+- Update system clock
+    timedatectl set-ntp true
+    timedatectl status
+- Partition disks
+    fdisk -l
+    fdisk /dev/sdX
+        GPT Table
+        Partition 1: +512M, EFI Partition
+        Partition 2: +, Linux Filesystem
+- Format Partitions
+    mkfs.fat -F 32 /dev/sdX1
+    mkfs.ext4 /dev/sdX2
+- Mount file systems
+    mount /dev/sdX2 /mnt
+- (Optional) Inspect mirrors, moving geographically closer ones higher
+    /etc/pacman.d/mirrorlist
+- Install essential packages
+    pacstrap /mnt base linux linux-firmware
+- Generate fstab
+    genfstab -U /mnt >> /mnt/etc/fstab
+
+- Change root into new system
+    arch-chroot /mnt
+- Set time zone
+    ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
+    hwclock --systohc
+- Install nano
+    pacman -S nano
+- Localization
+    nano /etc/locale.gen
+        uncomment en_US.UTF-8 UTF-8
+    locale-gen
+    nano /etc/locale.conf
+        LANG=en_US.UTF-8
+- Network Configuration
+    nano /etc/hostname
+        faba-system
+    nano /etc/hosts
+        127.0.0.1   localhost
+        ::1         localhost
+        127.0.1.1   faba-system
+- User management
+    Choose root password
+        passwd
+    Create new user
+        useradd -m faba
+        passwd faba
+        usermod -aG wheel
+    Install sudo
+        pacman -S sudo
+        EDITOR=nano visudo
+            (Uncomment Wheel)
+- Enable microcode
+    pacman -S amd-ucode
+        will be auto-detected by grub-mkconfig
+- Install bootloader
+    mkdir /efi
+    mount /dev/sdX1 /efi
+    pacman -S grub efibootmgr
+    grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=grub_uefi
+    grub-mkconfig -o /boot/grub/grub.cfg
+- Exit chroot
+    exit
+
+- Unmount all partitions
+    umount -R /mnt
+- Reboot/shutdown
+    reboot
+
+- Ensure boots correctly
+- Set up window manager, display manager, and desktop environment
+    sudo pacman -S xorg-server nvidia plasma
+    sudo systemctl enable sddm.service
+- Install kde apps (refer to document kde_apps.txt to confirm)
+    sudo pacman -S kde-system kde-accessibility
+    sudo pacman -S kde-utilities
+        1-6 9 13-17 19-22
+    sudo pacman -S kde-graphics
+        1 3 8-12
+    sudo pacman -S kde-multimedia
+        3 7 9
+    sudo pacman -S kde-network
+        2-3 9-10
+- Install essential pkgs
+    sudo pacman -S firefox vlc gnupg steam
+- Install virtualization
+    sudo pacman -S qemu libvirt iptables-nft dnsmasq bridge-utils openbsd-netcat virt-manager
+    sudo systemctl enable libvirtd.service
+- (optional) Install leftover pkgs
+- Reboot
+
+Confirm all works, otherwise, completed!
