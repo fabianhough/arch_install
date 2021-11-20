@@ -1,0 +1,94 @@
+ 
+
+kde-system
+kde-accessibility
+kde-utilities
+    1-6 9 13-17 19-22
+kde-graphics
+    1 3 8-12
+kde-multimedia
+    3 7 9
+kde-network
+    2-3 9-10
+
+
+Details:
+
+kde-system
+1    dolphin                         file browser
+2    kcron                           cron tasks
+3    khelpcenter                     help center for kde apps
+4    ksystemlog                      graphical system logger
+5    partitionmanager                partition manager
+
+kde-accessibility
+1    kmag                            magnifying tool
+2    kmousetool                      mouse clicker
+3    kmouth                          speech synthesizer
+4    kontrast                        checks contrast
+
+kde-utilities
+1    ark                             archiving
+2    filelight                       disk usage information
+3    kate                            text editor
+4    kbackup                         backup utility
+5    kcalc                           calculator
+6    kcharselect                     character selector
+7
+8
+9    kdialog                         displays dialog boxes from shell scripts
+10
+11
+12
+13   kgpg                            gpg manager
+14   konsole                         terminal
+15   kteatime                        tea time timer
+16   ktimer                          general timer
+17   kwalletmanager                  password manager
+18
+19   markdownpart                    markdown viewer
+20   print-manager                   print management
+21   sweeper                         system cleaner
+22   yakuake                         drop down terminal
+
+kde-graphics
+1    gwenview                        image viewer
+2
+3    kcolorchooser                   color chooser
+4
+5
+6
+7
+8    kolourpaint                     paint program
+9    kruler                          screen ruler
+10   okular                          document viewer
+11   skanlite                        image scanning
+12   spectacle                       screenshot capturing
+13
+
+kde-multimedia
+1
+2
+3    elisa                           music player
+4
+5
+6
+7    kamoso                          webcam recorder
+8
+9    kmix                            sound mixer
+10
+
+kde-network
+1
+2    kdenetwork-filesharing          smb file sharing tool prompt
+3    kget                            download manager
+4
+5
+6
+7
+8
+9    krdc                            remote desktop client
+10   krfb                            desktop sharing
+11
+12
+13
