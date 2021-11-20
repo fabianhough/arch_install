@@ -26,7 +26,7 @@ steam               games
 gnupg               gpg key management
 
 
-qemu libvirt iptables-nft dnsmasq bridge-utils openbsd-netcat virt-manager
+qemu libvirt iptables-nft dnsmasq bridge-utils openbsd-netcat virt-manager edk2-ovmf
     libvirtd.service
 
 
@@ -38,3 +38,5 @@ cups                        printing
     cups.socket
 cups-pdf                    print to pdf
 system-config-printer       auto-driver install
+
+obs-studio
