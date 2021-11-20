@@ -1,0 +1,30 @@
+ 
+
+sudo                superuser
+nano                editor
+htop                system monitor
+networkmanager      network management
+    NetworkManager.service
+xorg-server         window manager
+nvidia              video card driver
+plasma              kde plasma
+    sddm.service
+(plasma apps)       (see kde_apps.txt)
+
+
+firefox             web browser
+vlc                 media player
+steam               games
+
+
+qemu libvirt iptables-nft dnsmasq bridge-utils openbsd-netcat virt-manager
+    libvirtd.service
+
+snapd                       snap pkgs
+    snapd.socket
+
+cups                        printing
+    #cups.service
+    cups.socket
+cups-pdf                    print to pdf
+system-config-printer       auto-driver install
