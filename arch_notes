@@ -50,17 +50,19 @@
         127.0.0.1   localhost
         ::1         localhost
         127.0.1.1   faba-system
+    pacman -S networkmanager
+        systemctl enable NetworkManager.service
 - User management
     Choose root password
         passwd
     Create new user
         useradd -m faba
         passwd faba
-        usermod -aG wheel
+        usermod -aG wheel faba
     Install sudo
         pacman -S sudo
         EDITOR=nano visudo
-            (Uncomment Wheel)
+            (Uncomment Wheel) %wheel ALL=(ALL) ALL
 - Create swapfile
     dd if=/dev/zero of=/swapfile bs=1M count=4096 status=progress
     chmod 600 /swapfile
