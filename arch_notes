@@ -61,6 +61,14 @@
         pacman -S sudo
         EDITOR=nano visudo
             (Uncomment Wheel)
+- Create swapfile
+    dd if=/dev/zero of=/swapfile bs=1M count=4096 status=progress
+    chmod 600 /swapfile
+    mkswap /swapfile
+    swapon /swapfile
+    cp /etc/fstab /etc/fstab.bak
+    nano /etc/fstab
+        /swapfile none swap defaults 0 0
 - Enable microcode
     pacman -S amd-ucode
         will be auto-detected by grub-mkconfig
