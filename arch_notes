@@ -35,8 +35,8 @@
 - Set time zone
     ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
     hwclock --systohc
-- Install nano
-    pacman -S nano
+- Install admin pkgs
+    pacman -S sudo nano vim htop
 - Localization
     nano /etc/locale.gen
         uncomment en_US.UTF-8 UTF-8
@@ -59,8 +59,7 @@
         useradd -m faba
         passwd faba
         usermod -aG wheel faba
-    Install sudo
-        pacman -S sudo
+    Configure sudo
         EDITOR=nano visudo
             (Uncomment Wheel) %wheel ALL=(ALL) ALL
 - Create swapfile
@@ -91,7 +90,13 @@
 - Ensure boots correctly
 - Set up window manager, display manager, and desktop environment
     sudo pacman -S xorg-server nvidia plasma
-    sudo systemctl enable sddm.service
+        sudo systemctl enable sddm.service
+- Install utility apps
+    sudo pacman -S openssh gnupg firewalld firejail usbguard
+        sudo systemctl enable firewalld.service
+        (optional)
+        *sudo usbguard generate-policy > /etc/usbguard/rules.conf
+        *sudo systemctl enable usbguard.service
 - Install kde apps (refer to document kde_apps.txt to confirm)
     sudo pacman -S kde-system kde-accessibility
     sudo pacman -S kde-utilities
@@ -103,12 +108,16 @@
     sudo pacman -S kde-network
         2-3 9-10
 - Install essential pkgs
-    sudo pacman -S firefox vlc gnupg steam
+    sudo pacman -S firefox vlc steam libreoffice-still
 - Install virtualization
     sudo pacman -S qemu libvirt iptables-nft dnsmasq bridge-utils openbsd-netcat
     sudo pacman -S virt-manager edk2-ovmf
-    sudo systemctl enable libvirtd.service
-- (optional) Install leftover pkgs
+        sudo systemctl enable libvirtd.service
+- Install printing
+    sudo pacman -S cups cups-pdf system-config-printer
+        sudo systemctl enable cups.service
+- (optional) Install optional
+    sudo pacman -S obs-studio spotifyd gimp krita
 - Reboot
 
 Confirm all works, otherwise, completed!
