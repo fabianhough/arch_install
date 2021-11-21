@@ -121,3 +121,6 @@
 - Reboot
 
 Confirm all works, otherwise, completed!
+Extra:
+- Adjust kde system time
+- Prepare for AUR support
