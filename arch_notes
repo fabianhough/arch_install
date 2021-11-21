@@ -8,6 +8,10 @@
 - Confirm network
     ip addr show
     WIRELESS: iwctl
+        iwctl device list
+        iwctl station DEVICE scan
+        iwctl station DEVICE get-networks
+        iwctl station DEVICE connect SSID
     ping archlinux.org
 - Update system clock
     timedatectl set-ntp true
@@ -45,20 +49,20 @@
         LANG=en_US.UTF-8
 - Network Configuration
     nano /etc/hostname
-        faba-system
+        HOSTNAME
     nano /etc/hosts
         127.0.0.1   localhost
         ::1         localhost
-        127.0.1.1   faba-system
+        127.0.1.1   HOSTNAME
     pacman -S networkmanager
         systemctl enable NetworkManager.service
 - User management
     Choose root password
         passwd
     Create new user
-        useradd -m faba
-        passwd faba
-        usermod -aG wheel faba
+        useradd -m USER
+        passwd USER
+        usermod -aG wheel USER
     Configure sudo
         EDITOR=nano visudo
             (Uncomment Wheel) %wheel ALL=(ALL) ALL
@@ -73,6 +77,7 @@
 - Enable microcode
     pacman -S amd-ucode
         will be auto-detected by grub-mkconfig
+        (note: intel-ucode for intel cpu)
 - Install bootloader
     mkdir /efi
     mount /dev/sdX1 /efi
@@ -88,15 +93,19 @@
     reboot
 
 - Ensure boots correctly
-- Set up window manager, display manager, and desktop environment
-    sudo pacman -S xorg-server nvidia plasma
-        sudo systemctl enable sddm.service
+- (optional) Set up Wifi
+    nmcli device wifi list
+    nmcli device wifi connect SSID password PASSWORD
+    (note: will be in plain text, will fix later in DE)
 - Install utility apps
     sudo pacman -S openssh gnupg firewalld firejail usbguard
         sudo systemctl enable firewalld.service
         (optional)
         *sudo usbguard generate-policy > /etc/usbguard/rules.conf
         *sudo systemctl enable usbguard.service
+- Set up window manager, display manager, and desktop environment
+    sudo pacman -S xorg-server nvidia plasma
+        sudo systemctl enable sddm.service
 - Install kde apps (refer to document kde_apps.txt to confirm)
     sudo pacman -S kde-system kde-accessibility
     sudo pacman -S kde-utilities
@@ -109,6 +118,7 @@
         2-3 9-10
 - Install essential pkgs
     sudo pacman -S firefox vlc steam libreoffice-still
+    sudo pacman -S retroarch retroarch-assets-xmb retroarch-assets-ozone
 - Install virtualization
     sudo pacman -S qemu libvirt iptables-nft dnsmasq bridge-utils openbsd-netcat
     sudo pacman -S virt-manager edk2-ovmf
@@ -116,11 +126,19 @@
 - Install printing
     sudo pacman -S cups cups-pdf system-config-printer
         sudo systemctl enable cups.service
+        Change pdf save location /etc/cups/cups-pdf.conf
 - (optional) Install optional
     sudo pacman -S obs-studio spotifyd gimp krita
 - Reboot
 
+- Check to make sure DE works
+- Adjust kde system time, ensuring it is automatic and in correct region
+    (note: will not sync with mirror servers if not done!)
+- (optional) Fix plain-text network password
+    Disconnect network connection using KDE network manager
+    Reconnect, ensuring only the given user is able to connect
+
 Confirm all works, otherwise, completed!
 Extra:
-- Adjust kde system time
+- use --needed option
 - Prepare for AUR support

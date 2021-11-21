@@ -19,6 +19,8 @@ plasma              kde plasma
     sddm.service
 (plasma apps)       (see kde_apps.txt)
 
+* Use '--needed' to prevent reinstalling pkgs
+
 UTILITIES/SECURITY:
 gnupg               gpg key management
 openssh             ssh client/server
@@ -33,8 +35,12 @@ usbguard
 ESSENTIAL:
 firefox             web browser
 vlc                 media player
-steam               games
 libreoffice-still   office suite (stable)
+steam               games
+retroarch           retro games
+    retroarch-assets-xmb
+    retroarch-assets-ozone
+
 
 VIRTUALIZATION:
 qemu libvirt iptables-nft dnsmasq bridge-utils openbsd-netcat virt-manager edk2-ovmf
@@ -45,7 +51,7 @@ cups                        printing
     #cups.service
     cups.socket
 cups-pdf                    print to pdf
-    Change location /etc/cups/cups-pdf.conf
+    Change pdf save location /etc/cups/cups-pdf.conf
 system-config-printer       auto-driver install
 
 
