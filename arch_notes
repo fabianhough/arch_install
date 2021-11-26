@@ -40,7 +40,7 @@
     ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
     hwclock --systohc
 - Install admin pkgs
-    pacman -S sudo nano vim htop
+    pacman -S sudo nano vim
 - Localization
     nano /etc/locale.gen
         uncomment en_US.UTF-8 UTF-8
@@ -98,13 +98,13 @@
     nmcli device wifi connect SSID password PASSWORD
     (note: will be in plain text, will fix later in DE)
 - Install utility apps
-    sudo pacman -S openssh gnupg firewalld firejail usbguard
+    sudo pacman -S openssh gnupg firewalld firejail usbguard htop
         sudo systemctl enable firewalld.service
         (optional)
         *sudo usbguard generate-policy > /etc/usbguard/rules.conf
         *sudo systemctl enable usbguard.service
 - Set up window manager, display manager, and desktop environment
-    sudo pacman -S xorg-server nvidia plasma
+    sudo pacman -S xorg-server nvidia plasma lib32-nvidia-utils
         sudo systemctl enable sddm.service
 - Install kde apps (refer to document kde_apps.txt to confirm)
     sudo pacman -S kde-system kde-accessibility
@@ -117,8 +117,11 @@
     sudo pacman -S kde-network
         2-3 9-10
 - Install essential pkgs
-    sudo pacman -S firefox vlc steam libreoffice-still
-    sudo pacman -S retroarch retroarch-assets-xmb retroarch-assets-ozone
+    sudo pacman -S firefox vlc libreoffice-still
+    sudo nano /etc/pacman.conf
+        Enable multilib (both lines)
+    sudo pacman -S ttf-liberation
+    sudo pacman -S steam retroarch retroarch-assets-xmb retroarch-assets-ozone
 - Install virtualization
     sudo pacman -S qemu libvirt iptables-nft dnsmasq bridge-utils openbsd-netcat
     sudo pacman -S virt-manager edk2-ovmf
@@ -134,9 +137,12 @@
 - Check to make sure DE works
 - Adjust kde system time, ensuring it is automatic and in correct region
     (note: will not sync with mirror servers if not done!)
+- Connect to wifi
 - (optional) Fix plain-text network password
     Disconnect network connection using KDE network manager
     Reconnect, ensuring only the given user is able to connect
+- Fix mouse double-click behavior
+- Change visual settings
 
 Confirm all works, otherwise, completed!
 Extra:
