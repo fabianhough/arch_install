@@ -30,7 +30,7 @@
 - (Optional) Inspect mirrors, moving geographically closer ones higher
     /etc/pacman.d/mirrorlist
 - Install essential packages
-    pacstrap /mnt base linux linux-firmware
+    pacstrap /mnt base linux linux-firmware base-devel
 - Generate fstab
     genfstab -U /mnt >> /mnt/etc/fstab
 
@@ -98,7 +98,7 @@
     nmcli device wifi connect SSID password PASSWORD
     (note: will be in plain text, will fix later in DE)
 - Install utility apps
-    sudo pacman -S openssh gnupg firewalld firejail usbguard htop
+    sudo pacman -S openssh gnupg firewalld firejail usbguard git
         sudo systemctl enable firewalld.service
         (optional)
         *sudo usbguard generate-policy > /etc/usbguard/rules.conf
@@ -106,6 +106,7 @@
 - Set up window manager, display manager, and desktop environment
     sudo pacman -S xorg-server nvidia plasma lib32-nvidia-utils
         sudo systemctl enable sddm.service
+        sudo systemctl enable bluetooth.service
 - Install kde apps (refer to document kde_apps.txt to confirm)
     sudo pacman -S kde-system kde-accessibility
     sudo pacman -S kde-utilities
@@ -118,10 +119,12 @@
         2-3 9-10
 - Install essential pkgs
     sudo pacman -S firefox vlc libreoffice-still
+    sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
     sudo nano /etc/pacman.conf
         Enable multilib (both lines)
     sudo pacman -S ttf-liberation
     sudo pacman -S steam retroarch retroarch-assets-xmb retroarch-assets-ozone
+    sudo pacman -S qmk
 - Install virtualization
     sudo pacman -S qemu libvirt iptables-nft dnsmasq bridge-utils openbsd-netcat
     sudo pacman -S virt-manager edk2-ovmf
