@@ -133,6 +133,12 @@
     sudo pacman -S cups cups-pdf system-config-printer
         sudo systemctl enable cups.service
         Change pdf save location /etc/cups/cups-pdf.conf
+    Network Discovery:
+    sudo pacman -S avahi nss-mdns
+        sudo systemctl enable avahi-daemon.service
+            Edit /etc/nsswitch.conf and add 'mdns_minimal [NOTFOUND=return]'
+                'hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns'
+        *Note: May need to disable firewall for proper network discovery
 - (optional) Install optional
     sudo pacman -S obs-studio spotifyd gimp krita
 - Reboot
