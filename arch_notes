@@ -25,6 +25,8 @@
 - Format Partitions
     mkfs.fat -F 32 /dev/sdX1
     mkfs.ext4 /dev/sdX2
+- (Optional) Label partition (Helps in systemd-boot)
+    e2label /dev/sdX2 archlinux
 - Mount file systems
     mount /dev/sdX2 /mnt
 - (Optional) Inspect mirrors, moving geographically closer ones higher
@@ -81,9 +83,27 @@
 - Install bootloader
     mkdir /efi
     mount /dev/sdX1 /efi
-    pacman -S grub efibootmgr
-    grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=grub_uefi
-    grub-mkconfig -o /boot/grub/grub.cfg
+    grub:
+        pacman -S grub efibootmgr
+        grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=grub_uefi
+        grub-mkconfig -o /boot/grub/grub.cfg
+    systemd-boot (pain):
+        bootctl install
+        nano /efi/loader/loader.conf
+            default  arch.conf
+            timeout  4
+            console-mode max
+            editor   no
+        nano /efi/loader/entries/arch.conf
+            title   Arch Linux
+            linux   ../boot/vmlinuz-linux
+            initrd  ../boot/<processor>-ucode.img
+            initrd  ../boot/initramfs-linux.img
+            options root=UUID=<uuid of filesystem> rw
+
+        (Get UUID and send it to the file)
+            blkid -s UUID -o value /dev/sdX2 >> /efi/loader/entries/arch.conf
+        (note, all the '/' entries are located in /boot)
 - Exit chroot
     exit
 
@@ -104,7 +124,7 @@
         *sudo usbguard generate-policy > /etc/usbguard/rules.conf
         *sudo systemctl enable usbguard.service
 - Set up window manager, display manager, and desktop environment
-    sudo pacman -S xorg-server nvidia plasma lib32-nvidia-utils
+    sudo pacman -S xorg-server plasma nvidia lib32-nvidia-utils nvidia-settings
         sudo systemctl enable sddm.service
         sudo systemctl enable bluetooth.service
 - Install kde apps (refer to document kde_apps.txt to confirm)
