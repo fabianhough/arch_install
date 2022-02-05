@@ -138,7 +138,7 @@
     sudo pacman -S kde-network
         2-3 9-10
 - Install essential pkgs
-    sudo pacman -S firefox vlc libreoffice-still
+    sudo pacman -S firefox vlc libreoffice-still audacity
     sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
     sudo nano /etc/pacman.conf
         Enable multilib (both lines)
