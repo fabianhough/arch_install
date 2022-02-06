@@ -137,9 +137,28 @@
         3 7 9
     sudo pacman -S kde-network
         2-3 9-10
+- Install new shell
+    sudo pacman -S zsh
+        zsh (run through configuration and install)
+    chsh -s /usr/bin/zsh
+
+    Optionally install powerlevel10k
+        sudo pacman -S zsh-theme-powerlevel10k
+        (Or go through manually with aur)
+        (zsh-theme-powerlevel10k-git)
+
+    Optionally install oh-my-zsh  (also how to install AUR packages):
+        mkdir aur
+        cd aur
+        git clone <oh-my-zsh git repo.git>
+        cd <oh-my-zsh git repo>
+        (confirm files)
+        makepkg
+        pacman -U <package_file.pkg.tar.zst>   (installs)
+
 - Install essential pkgs
     sudo pacman -S firefox vlc libreoffice-still audacity
-    sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+    sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra wget
     sudo nano /etc/pacman.conf
         Enable multilib (both lines)
     sudo pacman -S ttf-liberation
