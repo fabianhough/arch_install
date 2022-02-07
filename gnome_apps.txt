@@ -1,0 +1,168 @@
+gnome
+
+nutshell:
+Can honestly just install the entire gnome group, and it should be fine
+
+otherwise
+
+gnome
+1-9 11-16 18-22 24 27-38 41-50 53-54 56-58 60-61
+    option 2 - pipewire-jack
+    option 2 - wireplumber
+    option 1 - ffmpeg
+    option 1 - noto-fonts-emoji
+gnome-extra
+7 13 20-21 25 29-31 38
+
+
+Y:
+1-9
+11-16
+18-22
+24
+27-38
+41-50
+53-54
+56-68
+60-61
+
+N:
+10  gnome-books         ebook manager
+17  gnome-contacts      contacts
+23  gnome-maps          maps
+25  gnome-music         music
+26  gnome-photos        photos
+39  gnome-weather       weather
+40  grilo-plugins       for music and photos
+51  orca                accessibility
+52  rygel               media server
+55  totem               video player
+59  vino                vnc server (deprecated)
+
+
+
+gnome:
+1	baobab                        disk usage analyzer
+2	cheese                        webcam
+3	eog                           image viewer
+4	epiphany                      web browser, simple
+5	evince                        document viewer
+6	file-roller                   archive manager
+7	gdm                           display manager
+8	gedit                         text editor
+9	gnome-backgrounds             default backgrounds and images
+10	gnome-books                   ebook manager
+11	gnome-boxes                   virtual machine manager
+12	gnome-calculator              calculator
+13	gnome-calendar                calendar
+14	gnome-characters              "emoji" character inserter
+15	gnome-clocks                  clock app
+16	gnome-color-manager           general color management
+17	gnome-contacts                contact manager
+18	gnome-control-center          main modification interface
+19	gnome-disk-utility            disk management
+20	gnome-font-viewer             font viewer
+21	gnome-keyring                 password storage
+22	gnome-logs                    log viewer for systemd journal
+23	gnome-maps                    simple map viewer
+24	gnome-menus                   general menu library
+25	gnome-music                   music player
+26	gnome-photos                  photo manager
+27	gnome-remote-desktop          remote desktop server
+28	gnome-screenshot              screenshot capture
+29	gnome-session                 session handler
+30	gnome-settings-daemon         settings daemon
+31	gnome-shell                   main shell
+32	gnome-shell-extensions        shell extensions
+33	gnome-software                gui software installer
+34	gnome-system-monitor          system monitor
+35	gnome-terminal                simple terminal emulator
+36	gnome-user-docs               user documentation for gnome
+37	gnome-user-share              simple user file sharing
+38	gnome-video-effects           gui video effects
+39	gnome-weather                 weather viewer
+40	grilo-plugins                 plugins for grilo, needed by: music, photos
+41	gvfs                          file management
+42	gvfs-afc
+43	gvfs-goa
+44	gvfs-google
+45	gvfs-gphoto2
+46	gvfs-mtp
+47	gvfs-nfs
+48	gvfs-smb
+49	mutter                        window manager
+50	nautilus                      file browser
+51	orca                          screen reader/accessibility
+52	rygel                         upnp media server
+53	simple-scan                   simple scanning utility
+54	sushi                         nautilus quick preview
+55	totem                         videos, movie player
+56	tracker                       filesystem indexer, storage and search tool
+57	tracker3-miners
+58	tracker-miners
+59	vino                          vnc server
+60	xdg-user-dirs-gtk             default user dirs
+61	yelp                          gnome help viewer
+
+
+Y:
+7
+13
+20
+21
+25
+29
+30
+31
+38
+
+
+
+
+gnome-extra:
+1	accerciser                    allow check application support for assisted tech
+2	dconf-editor                  dconf editor
+3	devhelp                       api documentation browser for gnome
+4	evolution                     email,contact,schedule manager
+5	five-or-more                  game
+6	four-in-a-row                 game
+7	geary                         lightweight email client
+8	ghex                          binary editor
+9	glade                         user interface builder for gtk+ apps
+10	gnome-builder                 ide for gnome  based software
+11	gnome-chess                   game
+12	gnome-code-assistance         code assistance for IDEs
+13	gnome-connections             remote desktop viewer/client
+14	gnome-devel-docs              gnome developer documents
+15	gnome-documents               general document manager
+16	gnome-games                   game launcher
+17	gnome-klotski                 game
+18	gnome-mahjongg                game
+19	gnome-mines                   game
+20	gnome-multi-writer            iso to multi usb writer
+21	gnome-nettool                 front end to various network cli
+22	gnome-nibbles                 game
+23	gnome-recipes                 recipe manager
+24	gnome-robots                  game
+25	gnome-sound-recorder          simple audio recorder
+26	gnome-sudoku                  game
+27	gnome-taquin                  game
+28	gnome-tetravex                game
+29	gnome-todo                    todo list
+30	gnome-tweaks                  advanced options for gnome
+31	gnome-usage                   system usage monitor, newer than system monitor
+32	hitori                        game
+33	iagno                         game
+34	lightsoff                     game
+35	polari                        irc client
+36	quadrapassel                  game
+37	swell-foop                    game
+38	sysprof                       system profiler
+39	tali                          game
+
+
+
+
+
+
+

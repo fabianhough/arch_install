@@ -124,10 +124,25 @@
         *sudo usbguard generate-policy > /etc/usbguard/rules.conf
         *sudo systemctl enable usbguard.service
 - Set up window manager, display manager, and desktop environment
-    sudo pacman -S xorg-server plasma nvidia lib32-nvidia-utils nvidia-settings
+    sudo pacman -S nvidia lib32-nvidia-utils nvidia-settings
+
+-----
+- Choose DE:
+- Install gnome
+    sudo pacman -S gnome
+        1-9 11-16 18-22 24 27-38 41-50 53-54 56-58 60-61
+            option 2 - pipewire-jack
+            option 2 - wireplumber
+            option 1 - ffmpeg
+            option 1 - noto-fonts-emoji
+    sudo pacman -S gnome-extra
+        7 13 20-21 25 29-31 38
+    sudo systemctl enable gdm.service
+
+- Install kde + apps (refer to document kde_apps.txt to confirm)
+    sudo pacman -S xorg-server plasma
         sudo systemctl enable sddm.service
         sudo systemctl enable bluetooth.service
-- Install kde apps (refer to document kde_apps.txt to confirm)
     sudo pacman -S kde-system kde-accessibility
     sudo pacman -S kde-utilities
         1-6 9 13-17 19-22
@@ -137,6 +152,8 @@
         3 7 9
     sudo pacman -S kde-network
         2-3 9-10
+-----
+
 - Install new shell
     sudo pacman -S zsh
         zsh (run through configuration and install)
