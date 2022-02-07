@@ -139,6 +139,9 @@
         7 13 20-21 25 29-31 38
     sudo systemctl enable gdm.service
 
+    (Optional) Enable Fractional Scaling in Wayland
+    gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+
 - Install kde + apps (refer to document kde_apps.txt to confirm)
     sudo pacman -S xorg-server plasma
         sudo systemctl enable sddm.service
