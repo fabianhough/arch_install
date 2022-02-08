@@ -198,7 +198,7 @@
         pacman -U <package_file.pkg.tar.zst>   (installs)
 
 - Install essential pkgs
-    sudo pacman -S firefox vlc libreoffice-still audacity
+    sudo pacman -S firefox vlc libreoffice-still flatpak
     sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra wget
     sudo nano /etc/pacman.conf
         Enable multilib (both lines)
