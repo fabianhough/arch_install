@@ -183,6 +183,12 @@
         zsh (run through configuration and install)
     chsh -s /usr/bin/zsh
 
+    Optionally install syntax highlighting and autosuggestions
+    sudo pacman -S zsh-syntax-highlighting zsh-autosuggestions
+    Add source
+        source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
     Optionally install powerlevel10k
         sudo pacman -S zsh-theme-powerlevel10k
         (Or go through manually with aur)
