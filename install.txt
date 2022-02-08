@@ -154,6 +154,9 @@
     sudo pacman -S gnome-themes-extra
     Additional themes can be found in gnome_apps.txt
 
+    (Optional) Install gnome passwordsafe (compatible with keepass)
+    sudo pacman -S gnome-passwordsafe
+
     Wayland:
     Nvidia drm kernel mode setting
         Modify GRUB settings
@@ -204,7 +207,7 @@
         pacman -U <package_file.pkg.tar.zst>   (installs)
 
 - Install essential pkgs
-    sudo pacman -S firefox vlc libreoffice-still flatpak
+    sudo pacman -S firefox vlc libreoffice-still flatpak keepassxc
     sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra wget
     sudo nano /etc/pacman.conf
         Enable multilib (both lines)
