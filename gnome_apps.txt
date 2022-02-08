@@ -6,7 +6,7 @@ Can honestly just install the entire gnome group, and it should be fine
 otherwise
 
 gnome
-1-9 11-15 17-21 23 26-37 40-49 52 54-56 58-61
+1-9 11-15 17-21 23 26-31 33-37 40-49 52 54-56 58-61
     option 2 - pipewire-jack
     option 2 - wireplumber
     option 1 - ffmpeg
@@ -20,7 +20,8 @@ Y:
 11-15
 17-21
 23
-26-37
+26-31
+33-37
 40-49
 52
 54-56
@@ -28,6 +29,7 @@ Y:
 
 N:
 if needed:
+32	gnome-software      gui software installer (requires gnome-software-packagekit-plugin)
 51  rygel               media server, enables media sharing
 
 not needed:

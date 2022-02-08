@@ -138,7 +138,7 @@
 - Choose DE:
 - Install gnome
     sudo pacman -S gnome
-        1-9 11-15 17-21 23 26-37 40-49 52 54-56 58-61
+        1-9 11-15 17-21 23 26-31 33-37 40-49 52 54-56 58-61
             option 2 - pipewire-jack
             option 2 - wireplumber
             option 1 - ffmpeg
