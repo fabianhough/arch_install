@@ -27,16 +27,23 @@ Y:
 58-61
 
 N:
+if needed:
+51  rygel               media server, enables media sharing
+
+not needed:
 10  gnome-books         ebook manager
 16  gnome-contacts      contacts
 22  gnome-maps          maps
+38  gnome-weather       weather
+50  orca                accessibility
+
+media:
 24  gnome-music         music
 25  gnome-photos        photos
-38  gnome-weather       weather
 39  grilo-plugins       for music and photos
-50  orca                accessibility
-51  rygel               media server
 53  totem               video player
+
+deprecated:
 57  vino                vnc server (deprecated)
 
 
