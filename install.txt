@@ -150,6 +150,11 @@
     (Optional) Enable Fractional Scaling in Wayland
     gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 
+    (Optional) Install extra gnome themes (dark theme)
+    sudo pacman -S gnome-themes-extra
+    Additional themes can be found in gnome_apps.txt
+
+    Wayland:
     Nvidia drm kernel mode setting
         Modify GRUB settings
 
