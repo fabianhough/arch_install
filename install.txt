@@ -163,6 +163,9 @@
 
     (Optional) Install gnome extension manager Flatpak
 
+    (Optional) Install other gnome compatible apps
+    sudo pacman -S guake gnome-passwordsafe
+
     Wayland:
     Nvidia drm kernel mode setting
         Modify GRUB settings
