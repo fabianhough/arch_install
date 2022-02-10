@@ -118,7 +118,7 @@
     nmcli device wifi connect SSID password PASSWORD
     (note: will be in plain text, will fix later in DE)
 - Install utility apps
-    sudo pacman -S openssh gnupg firewalld firejail usbguard git
+    sudo pacman -S openssh gnupg firewalld firejail usbguard git tmux
         sudo systemctl enable firewalld.service
         (optional)
         *sudo usbguard generate-policy > /etc/usbguard/rules.conf
