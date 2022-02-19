@@ -238,7 +238,7 @@
                 'hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns'
         *Note: May need to disable firewall for proper network discovery
 - (optional) Install optional
-    sudo pacman -S obs-studio spotifyd gimp krita
+    sudo pacman -S obs-studio gimp krita
 - Reboot
 
 - Check to make sure DE works
